@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var globalVar="I am global"; //global scope
+        console.log (globalVar);
+
+        function checkGlobal(){
+            console.log(globalVar+ "checkglobal value");
+        }
+       checkGlobal();
+
+       //------------------------------------
+
+        function functionScopeExample() // function scope
+        {
+            var localVar="local var";
+            console.log(localVar);
+            alert(localVar);
+        }
+         
+        functionScopeExample();
+
+//---------------------------------
+
+// Block scope
+       {
+        
+       }
+    </script>
+    
+</body>
+</html>

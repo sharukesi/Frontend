@@ -1,0 +1,152 @@
+!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Document</title> 
+    <style> 
+ 
+/* ********* 2. COMBINATOR SELECTORS ************  
+(select elements based on a specific relationship between them) 
+*/ 
+ 
+         /* Descendant combinator Ex:1 (space)*/ 
+        div p{ 
+            background-color: rgb(203, 183, 230); 
+        } 
+ 
+        /* Descendant combinator Ex:2 - for BLOCK ELEMNETS - NOT APPLICABLE (space)*/ 
+        div p h1{ 
+            background-color: rgb(229, 241, 184); 
+            font-size: 20px; 
+        } 
+ 
+        /* Descendant combinator Ex:3 - for INLINE ELEMNETS ONLY (space)*/ 
+        div p a{ 
+            background-color: rgb(229, 241, 184); 
+            font-size: 20px; 
+        } 
+ 
+        /* Descendant combinator Ex:3 - for SEMANTIC ELEMNETS APPLICATION (space)*/ 
+        article h2 { 
+            color: rgb(11, 153, 153); 
+        } 
+ 
+        /* Child combinator Ex: 1 (>) */ 
+            div > span { 
+                background-color: rgb(225, 123, 40); 
+            } 
+ 
+         /* Child combinator Ex: 2 (>) */ 
+            div > p > i { 
+                background-color: rgb(225, 40, 185); 
+            } 
+ 
+        /* Next sibling combinator (+) */ 
+        div + h1 { 
+            background-color: rgb(44, 30, 235); 
+        } 
+ 
+        /* Subsequent-sibling combinator (~) */ 
+         div ~ h3 { 
+ 
+            background-color: rgb(146, 246, 251); 
+        } 
+ 
+       
+    </style> 
+     
+</head> 
+<body> 
+ 
+<!--Four different combinators--> 
+ 
+<!--1. Descendant Combinator--> 
+<p>Matches all the elements that are descendants  (children, grandchildren, etc.)  of a specified element. </p> 
+ 
+    <div> 
+        <p>Paragraph 1 in the div.</p> 
+        <p>Paragraph 2 in the div.</p> 
+        <p>Paragraph 3 in the div.</p> 
+          <section> 
+            <p>This will also change</p> <!--Paragraph (grandchild) inside section also styled--> 
+        </section> 
+    </div> 
+        <p>Paragraph 4 in the div.</p> 
+        <p>Paragraph 5 in the div.</p> 
+ 
+   <div> 
+        <p> 
+            <!-- h1 inside p (BLOCK ELEMENT) --> 
+            <!-- -NOT APPLICABLE FOR BLOCK ELEMENTS -- WRONG STRUCTURE--> 
+            <h1>This heading will not be affected</h1> 
+        </p> 
+    </div> 
+ 
+      <div> 
+        <!-- APPLICABLE FOR INLINE ELEMENTS -- RIGHT STRUCTURE 
+            Allowed inside <p>: 
+                text 
+                <span> 
+                <b> 
+                <i> 
+                <a> etc.  
+        --> 
+        <p> 
+            <!-- a tag inside p --> 
+            <a>This anchor link will get background color</a> 
+        </p> 
+    </div> 
+ 
+    <!--SEMANTIC APPLICATION--> 
+    <article> 
+        <h2>Paragraph 1 in the div. 
+            <h1>I element</h1> 
+        </h2> 
+        <h2>Paragraph 2 in the div.</h2> 
+        <h2>Paragraph 3 in the div.</h2> 
+    </article> 
+     
+ 
+  <!--2. Child Combinator - Example-->  
+        
+    <p>Selects all the span elements that are direct children of a (specified) div element. using (>)</p> 
+ 
+                  <!--Main difference between Descendant and Child is, grand childrens are not affected in Child 
+Combinator, to affect, we must give deepest element structure like div > p > span--> 
+    <div> 
+        <span>Ex: Span 1 in the div.</span> 
+        <span>Span 2 in the div.</span> 
+        <p> <!-- This is colored using div p--> 
+            <span>This will NOT change</span> <!--span (grandchild) inside p  will not be styled --> 
+        </p> 
+ 
+         <p> 
+            <i>This is styled using div > p > i</i> <!--i (grandchild) inside p styled --> 
+        </p> 
+    </div> 
+        <span>Span 3 in the div.</span> 
+        <span>Span 4 in the div.</span> 
+ 
+        <br><br> 
+ 
+  <!--Next Sibling Combinator-->  
+     <p>Selects the first h1 element that are placed immediately after div end tag (/div) element using (+)</p> 
+    <div> 
+          <h1>hl in the div.</h1> 
+          <h1>hl in the div.</h1> 
+    </div> 
+        <h1>first hl after the div.</h1> 
+        <h1>second hl after the div.</h1> 
+ 
+<!--Subsequent-sibling Combinator-->  
+     <p>Selects all the h3 element that are next siblings of div element (end tag) using (~)></p> 
+    <div> 
+          <h2>h2 in the div.</h2> 
+          <h2>h2 in the div.</h2> 
+    </div> 
+        <h3>first h3 after the div.</h3> 
+        <h5>h5 after the div</h5> 
+        <h3>second h3 after the div.</h3> 
+</body>
+</html>
