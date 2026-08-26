@@ -1,29 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-          var globalVar="ramya";
+// Global variable
+let name = "Sharu";
 
-          let name="alice";
+// 1. Normal Function - Add two numbers
+function add(a, b) {
+    return a + b;
+}
 
-          var zx=10;
-          let x=10;
-          x=40;
+// 2. Function Expression - Multiply two numbers
+const multiply = function(a, b) {
+    return a * b;
+};
 
-          console.log(globalVar);
+// 3. Arrow Function - Subtract two numbers
+const subtract = (a, b) => {
+    return a - b;
+};
 
-          const PI=3.14;
+// 4. Function with parameters and return value
+function square(number) {
+    return number * number;
+}
 
-          console.log(x);
+// 5. Callback Function
+function calculate(a, b, callback) {
+    return callback(a, b);
+}
 
+// 6. Function Closure
+function counterFunction() {
+    let count = 0; // Local variable
 
+    return function() {
+        count++;
+        return count;
+    };
+}
 
-          
-</script>
-</body>
-</html>
+// Calling functions
+console.log("Name:", name);
+
+console.log("Addition:", add(10, 5));
+console.log("Multiplication:", multiply(10, 5));
+console.log("Subtraction:", subtract(10, 5));
+console.log("Square:", square(5));
+
+// Callback
+console.log("Callback Addition:", calculate(20, 10, add));
+
+// Global vs Local Scope
+function scopeExample() {
+    let localName = "Kesi";
+
+    console.log("Global variable:", name);
+    console.log("Local variable:", localName);
+}
+
+scopeExample();
+
+// Closure
+const counter = counterFunction();
+
+console.log("Counter:", counter());
+console.log("Counter:", counter());
+console.log("Counter:", counter());
