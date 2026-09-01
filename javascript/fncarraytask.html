@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+// 1. Function to add two numbers
+function add(a, b) {
+    return a + b;
+}
+console.log("Addition:", add(10, 5));
+
+
+// 2. Function Expression to multiply two numbers
+const multiply = function(a, b) {
+    return a * b;
+};
+console.log("Multiplication:", multiply(10, 5));
+
+
+// 3. Arrow Function to subtract two numbers
+const subtract = (a, b) => {
+    return a - b;
+};
+console.log("Subtraction:", subtract(10, 5));
+
+
+// 4. Function with parameters and return value
+function square(number) {
+    return number * number;
+}
+console.log("Square:", square(6));
+
+
+// 5. Global vs Local Scope
+let globalVariable = "I am Global";
+
+function scopeExample() {
+    let localVariable = "I am Local";
+
+    console.log(globalVariable); // Global variable
+    console.log(localVariable);  // Local variable
+}
+
+scopeExample();
+
+console.log(globalVariable); // Can access outside function
+// console.log(localVariable); // Error - Cannot access outside function
+
+
+// 6. Callback Function
+function greet(name, callback) {
+    console.log("Hello " + name);
+    callback();
+}
+
+function message() {
+    console.log("Welcome to JavaScript!");
+}
+
+greet("Sharu", message);
+
+
+// 7. Function Closure
+function outerFunction() {
+    let count = 0;
+
+    function innerFunction() {
+        count++;
+        console.log("Count:", count);
+    }
+
+    return innerFunction;
+}
+
+const counter = outerFunction();
+
+counter(); // Count: 1
+counter(); // Count: 2
+counter(); // Count: 3
+
+</script>
+
+
+</body>
+</html>
