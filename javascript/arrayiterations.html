@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //map()
+const numbers = [1, 2, 3, 4, 5];
+
+const doubled = numbers.map(
+function(num){
+    
+    return num * 2;
+}
+);
+
+console.log( "map()- Doubled numbers:" + doubled);
+// Output: [2, 4, 6, 8, 10]
+ 
+
+//filter()
+ const evens= numbers.filter(
+    function(num)
+    {
+        return num % 2===0;
+        
+    }
+ );
+
+ console.log( "filter()- Even numbers:" + evens);
+//output: [2, 4]
+
+//reduce()
+
+ const sum= numbers.reduce(
+    function(accumulator, currentValue)
+    {
+        return accumulator + currentValue;
+    }
+ );
+
+ console.log( "reduce()- Sum of numbers:" + sum);
+//output: 15
+
+   </script>
+</body>
+</html>

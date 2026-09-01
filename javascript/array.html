@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="explainIndexof()">indexOf()</button>
+    <button onclick="explainLastIndexof()">lastIndexOf()</button>
+
+    <div id="output" style="border: 2px solid #e43232; padding: 10px; height: 100px; width: 100px;"></div>
+   <div id="output2" style="border: 2px solid #e43232; padding: 10px; height: 100px; width: 100px;"></div>
+
+<script>
+    const fruits = ["apple", "banana", "cherry", "date", "elderberry"];
+function explainIndexof(){
+
+    const result =fruits.indexOf("cherry");
+    document.getElementById("output").innerText += result;
+
+}
+
+function explainLastIndexof(){
+
+    const result =fruits.lastIndexOf("banana");
+    document.getElementById("output").innerText += result;
+
+}
+
+
+
+
+
+</script>
+</body>
+
+
+</html>
