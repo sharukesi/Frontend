@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         console.log(5+3);
+         console.log(5*3);
+         console.log(5-3);
+
+        function greet(john) {
+            return "Hello, " + john + "!";
+        }
+       console.log(greet("John"));
+
+       let globalVariable = "I am Global";
+
+      
+    let localVariable = "I am Local";
+
+    console.log(globalVariable); 
+    console.log(localVariable);  
+
+
+function outer() {
+
+    let count = 0;
+
+    function inner() {
+        count++;
+        console.log(count);
+    }
+
+    return inner;
+}
+
+let result = outer();
+
+result();
+result();
+result();
+
+    </script>
+</body>
+</html>
