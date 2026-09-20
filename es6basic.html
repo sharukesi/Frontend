@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> see the console</h1>
+    <script>
+
+//------ES6__1
+
+let name = "johndoe"
+const age = 20
+
+console.log(`My name is ${name} and I am ${age} years old.`);
+function greet(name = "Guest") { console.log(`Hello ${name}! Welcome to our website.`);
+
+}
+greet("malini"); 
+greet();
+
+
+//---ES6___2
+
+
+let sports = ["cricket","tennis","football"]
+let[game1,game2,game3]=sports
+console.log(game2);
+
+
+let characters = ["king","queen","prince"];
+let ogcharacters = [...characters];
+ console.log(characters);
+
+ function addNumbers(...numbers) {
+     let total = 0;
+    for (let number of numbers)
+{ total = total + number; } 
+console.log("Total:", total); }
+ addNumbers(10, 20, 30); addNumbers(5, 10, 15, 20);
+
+
+//----ES6___3
+
+console.log("Sum:", add (40, 50));
+
+ class Student { constructor(name) 
+    { this.name = name; } 
+
+ display()
+ 
+ { console.log(`Student Name: ${this.name}`); } 
+ }
+
+ let student = new Student("Malini"); 
+ student.display();
+
+    </script>
+    
+</body>
+</html>
