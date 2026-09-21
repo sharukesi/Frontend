@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promise and Async Await</title>
+</head>
+<body>
+
+<script>
+
+
+function greet(name, callback) {
+    console.log("Hello " + name);
+    callback();
+}
+
+function message() {
+    console.log("Welcome!");
+}
+
+greet("steve", message);
+
+
+function checkNumber(num) {
+    return new Promise(function(resolve, reject) {
+
+        if (num > 0) {
+            resolve("Number is positive");
+        } else {
+            reject("Number is not positive");
+        }
+
+    });
+}
+checkNumber(10)
+    .then(function(result) {
+        console.log(result);
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+
+
+async function check() {
+
+    try {
+        let result = await checkNumber(10);
+        console.log(result);
+    }
+    catch(error) {
+        console.log(error);
+    }
+
+}
+
+check();
+
+</script>
+
+</body>
+</html>
